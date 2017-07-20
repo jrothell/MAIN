@@ -12,8 +12,6 @@
 <!-- Magnific Popup core CSS file -->
   			<link rel="stylesheet" href="dist/magnific-popup.css"> 
  
-<!-- Magnific Popup core JS file -->
-  			<script src="dist/jquery.magnific-popup.js"></script>
 
 
 
@@ -80,7 +78,7 @@
 
 		<tr>
 			<td><b>2017</b></td>
-			<td><a href="https://vimeo.com/196232033">
+			<td><a class="popup-vimeo" href="http://vimeo.com/196232033">
 				Unconventional
 			</a></td>
 			<td>Intuitive (dev)</td>
@@ -103,7 +101,7 @@
 
 		<tr>
 			<td><b>2016</b></td>
-			<td><a href="https://vimeo.com/201183481">
+			<td><a class="popup-vimeo" href="http://vimeo.com/201183481">
 				Guns and Poses
 			</a></td>
 			<td>Helicon</td>
@@ -212,6 +210,7 @@
 	</table>
 
 
+
 <h3 align="center">EDUCATION</h3>
 <p align="center">
 		Bachelor of Arts, Centenary College of Louisiana, 2001<br>
@@ -220,7 +219,12 @@
 
 <a href="mailto:jrothell@gmail.com"><p id="email">jrothell@gmail.com</p></a>
 
+<!-- this is the JQuery library and must above the JScript-->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
+<!-- This has to come after the JQuery libary
+Magnific Popup core JS file -->
+<script src="dist/jquery.magnific-popup.js"></script>
 
 <script>
 $(document).ready(function() {
