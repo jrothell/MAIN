@@ -1,0 +1,481 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Lomax</title>
+<script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+<style>
+/* CSS code can be saved to other files and linkd by this method:
+
+ <link rel="stylesheet" type="text/css"
+ href="style.css"
+
+ or you can simply drop the code in between the <style> tags, as below.  */
+*{
+  font-family: Cambria, Georgia, serif;
+  margin: 0;
+}
+
+body {
+  background: #eee;
+  
+
+}
+.banner {
+  margin-top: 5px;
+  margin-bottom: 1px;
+  width: 40%;
+  float: center;
+}
+.text-shadow {
+    text-shadow: 2px 2px black;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+/*  background: url("bg_wt_textured.jpg");
+  background-size: 1000px 1200px;
+    background-repeat: no-repeat;*/
+}
+nav {
+  background: #333;
+
+}
+nav ul {
+  list-style-type: none;
+  /* list-style-type is for the bullet point dots on the list*/
+  padding: 0;
+}
+
+nav a {
+  text-decoration: none;/* this eliminates underlines on hyperlinks */
+  text-align: center;
+  color: #fff;
+  display: block;
+  padding: 10px;
+}
+nav a:hover {
+  background-color: #ffcc00; /* 'hover' is for when yoru curor hovers and changes the button color */
+  color: black;
+  text-shadow: 1px 0px black;
+  -o-transition:.5s;
+  -ms-transition:.5s;
+}
+/* social menu base styles */
+
+a.fb {
+/*  background: url(misc_images/fb.png) no-repeat center;
+  background-size: 30%;*/
+  margin: 1px;
+}
+.social {
+  max-width: 100px;
+  margin: 0 auto;
+}
+
+/* grid vs flex base styles*/
+#blocks{
+  margin: 20px;
+}
+
+article{
+  /*background: #fff;*/
+  background: #fff; /*url("bg_wt_textured.jpg");*/
+  background-size: auto;
+  margin-bottom: 20px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+article h2{
+  text-align: center;
+  font-size: 20px;
+  margin: 10px 0; /* 10px is for top and bottom; 0 is for left and right */
+}
+
+/* flex styles*/
+
+nav ul.social{
+  flex: 1 1 0;
+  display: flex;
+}
+nav ul.social li{
+  flex: 1 1 0;
+}
+
+@media screen and (min-width: 768px){  /*this makes a flex menu -- only when   the browser is larger than 768px do the below properties come into play; anything smaller and it defaults to a stuck version */
+  nav ul{
+    display: flex; /*this make the list items line up left to right! */
+    justify-content: center; /*this is a rad feature that tightens the buttons and pushes them left (flex-start), center (center) or right (flex-end), though you must nullify the "nav li"  'flex' values*/
+  }
+  nav li{
+    flex: 1 1 0;
+  }
+
+    nav {
+      display: flex; /*this turns your list items into boxes left to right*/
+      justify-content: space-between;/* this separates your 2 lists */
+    }
+    ul.social {
+      margin: 0px;
+    }
+
+    #blocks{
+      display: flex; /* this makes your boxes vertical instead of horizontal */
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+
+
+    article{
+      flex: 0 1 32%;
+      transition: flex-basis 0.2s linear;
+    }
+    article.stack{
+      flex: 0 1 100%;
+    }
+
+}
+body {
+	background-color: black;
+/*background-image: url("/LMX_gfx/bg_vignette_purple_textured.jpg");*/
+}
+* {box-sizing:border-box}
+
+/* Slideshow container */
+.slideshow-container {
+  max-width: 800px;
+  position: relative;
+  margin: auto;
+  margin-top: 100px;
+}
+
+.mySlides {
+    display: none;
+}
+
+/* Next & previous buttons */
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  margin-top: -22px;
+  padding: 16px;
+  color: white;
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover, .next:hover {
+  background-color: rgba(0,0,0,0.8);
+}
+
+/* Caption text */
+.text {
+  color: #f2f2f2;
+  font-size: 15px;
+  padding: 8px 12px;
+  position: absolute;
+  bottom: 8px;
+  width: 100%;
+  text-align: center;
+}
+
+/* Number text (1/3 etc) */
+.numbertext {
+  color: #f2f2f2;
+  font-size: 12px;
+  padding: 8px 12px;
+  position: absolute;
+  top: 0;
+}
+
+/* The dots/bullets/indicators */
+.dot {
+  cursor:pointer;
+  height: 13px;
+  width: 13px;
+  margin: 0 2px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+  background-image: url("/LMX_gfx/bg_vignette_textured.jpg");
+/*  background-color: #717171;*/
+
+}
+
+/* Fading animation */
+.fade {
+  -webkit-animation-name: fade;
+  -webkit-animation-duration: 1.5s;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@-webkit-keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+@keyframes fade {
+  from {opacity: .4} 
+  to {opacity: 1}
+}
+
+			</style>
+	</head>
+
+
+<body>
+
+<!--   <div align="center">
+    <img class="banner" src="misc_images/LMX_slide0_main_image_banner_purple.jpg">
+    </div> -->
+
+    <div class="wrapper">
+  
+      <nav>
+      <!-- This is your basic navigation bar -->
+      <ul>
+        <li><a href="/lomax">Main</a></li>
+        <li><a href="/lomaxabout">About</a></li>
+        <li><a href="/lomaxcharacters">Characters</a></li>
+        <li><a href="/lomaxtravel">Travel</a></li>
+        <li><a href="/lomaxlegacy">Legacy</a></li>
+      </ul>
+
+      <ul class="social">
+        <li><a href="" class="fb">Agent</a></li>
+      
+      </ul>
+      </nav>
+
+<div class="slideshow-container">
+
+  <div class="mySlides fade">
+    <div class="numbertext">1 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide1_poster_blue_red.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">2 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide2_intro.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">3 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide3_JimCrowSouth.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">4 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide4_LibraryOfCongress.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">5 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide5_farm.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+  
+  <div class="mySlides fade">
+    <div class="numbertext">6 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide6_story.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">7 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide7_cotton_field.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">8 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide8_Structure.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+  
+
+  <div class="mySlides fade">
+    <div class="numbertext">9 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide9_fame.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+
+  <div class="mySlides fade">
+    <div class="numbertext">10 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide10_tone_and_style.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">11 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide11_hank.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">14 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide14_Characters_Lomaxes.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">15 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide15_theLomaxes.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">16 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide16_Characters_Talent.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">17 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide17_tone_and_style.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">18 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide18_charactersTrouble.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">19 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide19_charactersTrouble.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">20 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide20_theExCon.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+<div class="mySlides fade">
+    <div class="numbertext">21 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide21_leadbelly w bill2.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+
+  <div class="mySlides fade">
+    <div class="numbertext">22 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide22_franchise_potential.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">23 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide23_Audience.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">24 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide24_Audience_sdtrk.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext">25 / 25</div>
+    <img src="LMX_slides_w_bg/LMX_slide25_thieves_like_us.jpg" style="width:800px">
+    <div class="text"></div>
+  </div>
+
+
+
+  <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+  <a class="next" onclick="plusSlides(1)">&#10095;</a>
+</div>
+<br>
+
+<!-- <div style="text-align:center">
+  <span class="dot" onclick="currentSlide(1)"></span>
+  <span class="dot" onclick="currentSlide(2)"></span>
+  <span class="dot" onclick="currentSlide(3)"></span>
+  <span class="dot" onclick="currentSlide(4)"></span> 
+  <span class="dot" onclick="currentSlide(5)"></span> 
+  <span class="dot" onclick="currentSlide(6)"></span> 
+  <span class="dot" onclick="currentSlide(7)"></span> 
+  <span class="dot" onclick="currentSlide(8)"></span> 
+  <span class="dot" onclick="currentSlide(9)"></span> 
+  <span class="dot" onclick="currentSlide(10)"></span> 
+  <span class="dot" onclick="currentSlide(11)"></span> 
+  <span class="dot" onclick="currentSlide(12)"></span> 
+  <span class="dot" onclick="currentSlide(13)"></span> 
+  <span class="dot" onclick="currentSlide(14)"></span> 
+  <span class="dot" onclick="currentSlide(15)"></span> 
+  <span class="dot" onclick="currentSlide(16)"></span> 
+  <span class="dot" onclick="currentSlide(17)"></span> 
+  <span class="dot" onclick="currentSlide(18)"></span> 
+  <span class="dot" onclick="currentSlide(19)"></span> 
+  <span class="dot" onclick="currentSlide(20)"></span> 
+  <span class="dot" onclick="currentSlide(21)"></span> 
+  <span class="dot" onclick="currentSlide(22)"></span> 
+  <span class="dot" onclick="currentSlide(23)"></span> 
+  <span class="dot" onclick="currentSlide(24)"></span> 
+  <span class="dot" onclick="currentSlide(25)"></span> 
+</div> -->
+</div>
+
+
+<script>
+var slideIndex = 1;
+showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  var i;
+  var slides = document.getElementsByClassName("mySlides");
+  var dots = document.getElementsByClassName("dot");
+  if (n > slides.length) {slideIndex = 1} 
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+      slides[i].style.display = "none"; 
+  }
+  for (i = 0; i < dots.length; i++) {
+      dots[i].className = dots[i].className.replace(" active", "");
+  }
+  slides[slideIndex-1].style.display = "block"; 
+  dots[slideIndex-1].className += " active";
+}
+</script>
+
+</body>
+
+</html>
