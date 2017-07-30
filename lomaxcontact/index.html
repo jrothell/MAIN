@@ -1,0 +1,199 @@
+<!doctype html>
+
+<html>
+	<head>
+		<title>Contact</title>
+<script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+<style>
+/* CSS code can be saved to other files and linkd by this method:
+
+ <link rel="stylesheet" type="text/css"
+ href="style.css"
+
+ or you can simply drop the code in between the <style> tags, as below.  */
+*{
+	font-family: Cambria, Georgia, serif;
+	margin: 0;
+}
+
+body {
+	/*background: #eee;*/
+	/*background: #FFD700;*/
+	/*background: #fff099;*/
+	background: #404040;
+	
+
+}
+a {
+	color: #F0FFFF;
+}
+span {
+	color: #F0FFFF;
+}
+.banner {
+	margin-top: 5px;
+	margin-bottom: 1px;
+	width: 100%;
+}
+.box-shadow {
+    box-shadow: 7px 7px 7px black;
+}
+.text-shadow {
+    text-shadow: 2px 2px black;
+}
+
+.wrapper {
+	width: 100%;
+	max-width: 960px;
+	margin: 0 auto;
+/*	background: url("bg_wt_textured.jpg");
+	background-size: 1000px 1200px;
+    background-repeat: no-repeat;*/
+}
+
+nav {
+	background: #333;
+
+}
+
+nav ul {
+	list-style-type: none;
+	/* list-style-type is for the bullet point dots on the list*/
+	padding: 0;
+}
+
+nav a {
+	text-decoration: none;/* this eliminates underlines on hyperlinks */
+	text-align: center;
+	color: #F0FFFF;
+	display: block;
+	padding: 10px;
+}
+nav a:hover {
+	background-color: #ffcc00; /* 'hover' is for when yoru curor hovers and changes the button color */
+	color: black;
+	text-shadow: 1px 0px black;
+    -o-transition:.5s;
+    -ms-transition:.5s;
+    -moz-transition:.5s;
+    -webkit-transition:.5s;
+ 
+  /* ...and now for the proper property */
+  transition:.5s;
+
+}
+/* social menu base styles */
+
+a.fb {
+/*	background: url(misc_images/fb.png) no-repeat center;
+	background-size: 30%;*/
+	margin: 1px;
+}
+.social {
+	max-width: 100px;
+	margin: 0 auto;
+}
+
+/* grid vs flex base styles*/
+#blocks{
+	margin: 20px;
+}
+
+article{
+	/*background: #fff;*/
+	background: #fff; /*url("bg_wt_textured.jpg");*/
+	background-size: auto;
+	margin-bottom: 20px;
+	padding: 10px;
+	box-sizing: border-box;
+}
+
+article h2{
+	text-align: center;
+	font-size: 20px;
+	margin: 10px 0; /* 10px is for top and bottom; 0 is for left and right */
+}
+
+/* flex styles*/
+
+nav ul.social{
+	flex: 1 1 0;
+	display: flex;
+}
+nav ul.social li{
+	flex: 1 1 0;
+}
+
+@media screen and (min-width: 768px){  /*this makes a flex menu -- only when   the browser is larger than 768px do the below properties come into play; anything smaller and it defaults to a stuck version */
+	nav ul{
+		display: flex; /*this make the list items line up left to right! */
+		justify-content: center; /*this is a rad feature that tightens the buttons and pushes them left (flex-start), center (center) or right (flex-end), though you must nullify the "nav li"  'flex' values*/
+	}
+	nav li{
+		flex: 1 1 0;
+	}
+
+		nav {
+			display: flex; /*this turns your list items into boxes left to right*/
+			justify-content: space-between;/* this separates your 2 lists */
+		}
+		ul.social {
+			margin: 0px;
+		}
+
+		#blocks{
+			display: flex; /* this makes your boxes vertical instead of horizontal */
+			flex-wrap: wrap;
+			justify-content: space-between;
+		}
+
+
+
+		article{
+			flex: 0 1 32%;
+			transition: flex-basis 0.2s linear;
+		}
+		article.stack{
+			flex: 0 1 100%;
+		}
+p {
+	background:white;
+	width: 200px;
+	margin: 50px;
+	margin-left: 50px;
+
+}
+
+}
+
+
+</style>
+
+	</head>
+
+	<body>
+		<img class="banner" src="misc_images/LMX_slide0_main_image_banner_purple.jpg">
+
+		<div class="wrapper">
+		<div class="text-shadow">
+			<nav  class="box-shadow">
+			<!-- This is your basic navigation bar -->
+			<ul>
+				<li><a href="/lomax">Main</a></li>
+				<li><a href="/lomaxabout">About</a></li>
+				<li><a href="/lomaxcharacters">Characters</a></li>
+				<li><a href="/lomaxtravel">Travel</a></li>
+				<li><a href="/lomaxlegacy">Legacy</a></li>
+			</ul>
+
+			<ul class="social">
+				<li><a href="contact" class="fb">Agent</a></li>
+			
+			</ul>
+			</nav>
+		</div>
+		</div>
+<h1><p>Stand by.</p><h1>
+	</body>
+
+</html>
