@@ -5,6 +5,18 @@
 		<title>Lomax Main copy</title>
 
 <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+<script>
+
+var duration = 1.5,
+    displayTime = 15;
+
+var tl = new TimelineMax({repeat:10});
+
+tl.staggerFromTo(".item", duration, {opacity:0}, {opacity:1}, displayTime)
+  .staggerFromTo(".item", duration, {opacity:1}, {opacity:0, immediateRender:false}, displayTime, duration)
+
+
+</script>
 <style>
 
 *{
@@ -64,19 +76,6 @@ img {
 <div class="item"><a href="/lomaxabout"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
 <div class="item"> <img class="smaller" src="misc_images/LMX_slide1_logo_1line_alpha.png"></div>
 
- 
 
-<script>
-
-var duration = 1.5,
-    displayTime = 15;
-
-var tl = new TimelineMax({repeat:10});
-
-tl.staggerFromTo(".item", duration, {opacity:0}, {opacity:1}, displayTime)
-  .staggerFromTo(".item", duration, {opacity:1}, {opacity:0, immediateRender:false}, displayTime, duration)
-
-
-</script>
 </body>
 </html>
