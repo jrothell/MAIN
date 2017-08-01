@@ -51,7 +51,7 @@ img {
 <script>
 	jQuery('body').css('display','none');
 	jQuery(document).ready(function() {
-		jQuery('body').fadeIn();
+		jQuery('body').fadeIn(4000);
 		jQuery('a').on('click',function(event){
 			var thetarget = this.getAttribute('target')
 			if (thetarget != "_blank"){			
@@ -66,7 +66,7 @@ img {
 	});
 	setTimeout(function(){
 		jQuery('body').fadeIn();
-	},10000)
+	},2000)
 </script>
 
 <div class="wrapper">
