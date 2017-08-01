@@ -5,18 +5,7 @@
 		<title>Lomax Main copy</title>
 
 <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
-<script>
 
-var duration = 1.5,
-    displayTime = 15;
-
-var tl = new TimelineMax({repeat:10});
-
-tl.staggerFromTo(".item", duration, {opacity:0}, {opacity:1}, displayTime)
-  .staggerFromTo(".item", duration, {opacity:1}, {opacity:0, immediateRender:false}, displayTime, duration)
-
-
-</script>
 <style>
 
 *{
@@ -62,6 +51,18 @@ img {
 
 	</head>
 	<body>
+<script>
+
+var duration = 1.5,
+    displayTime = 15;
+
+var tl = new TimelineMax({repeat:10});
+
+tl.staggerFromTo(".item", duration, {opacity:0}, {opacity:1}, displayTime)
+  .staggerFromTo(".item", duration, {opacity:1}, {opacity:0, immediateRender:false}, displayTime, duration)
+
+
+</script>
 
 <div class="item"></div>
 <div class="item">"Without Lomax,</div>
