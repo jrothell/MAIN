@@ -2,10 +2,10 @@
 
 <html>
 	<head>
-		<title>Lomax Main copy</title>
-
+		<title>Lomax Main</title>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
-
+<script type="text/javascript" src="js/jfunc.js"></script>
 <style>
 
 *{
@@ -15,10 +15,7 @@
 
 body {
 	background: black;
-	
-
-}
-
+	}
 
 .wrapper {
 	width: 100%;
@@ -46,37 +43,49 @@ img {
 	width: 40%;
 }
 
-
 </style>
 
 	</head>
 	<body>
+
 <script>
-
-var duration = 1.5,
-    displayTime = 15;
-
-var tl = new TimelineMax({repeat:10});
-
-tl.staggerFromTo(".item", duration, {opacity:0}, {opacity:1}, displayTime)
-  .staggerFromTo(".item", duration, {opacity:1}, {opacity:0, immediateRender:false}, displayTime, duration)
-
-
+	jQuery('body').css('display','none');
+	jQuery(document).ready(function() {
+		jQuery('body').fadeIn();
+		jQuery('a').on('click',function(event){
+			var thetarget = this.getAttribute('target')
+			if (thetarget != "_blank"){			
+				var thehref = this.getAttribute('href')
+				event.preventDefault();
+				jQuery('body').fadeOut(function(){
+					//alert(thehref)
+					window.location = thehref					
+				});
+			}
+		});
+	});
+	setTimeout(function(){
+		jQuery('body').fadeIn();
+	},10000)
 </script>
 
-<div class="item"></div>
-<div class="item">"Without Lomax,</div>
-<div class="item">it’s possible there would have been</div>
-<div class="item">no blues explosion, </div>
-<div class="item">no R&B movement, </div>
-<div class="item">no Beatles </div>
-<div class="item">and no Stones </div>
-<div class="item">and no Velvet Underground."</div>
-<div class="item">- Brian Eno</div>
-<div class="item"></div>
-<div class="item"><a href="/lomaxabout"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
-<div class="item"> <img class="smaller" src="misc_images/LMX_slide1_logo_1line_alpha.png"></div>
+<div class="wrapper">
 
+		<div class="item"></div>
+		<div class="item">"Without Lomax,</div>
+		<div class="item">it’s possible there would have been</div>
+		<div class="item">no blues explosion, </div>
+		<div class="item">no R&B movement, </div>
+		<div class="item">no Beatles </div>
+		<div class="item">and no Stones </div>
+		<div class="item">and no Velvet Underground."</div>
+		<div class="item">- Brian Eno</div>
+		<div class="item"></div>
+		<div class="item"><a href="/lomaxshow"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
+		<div class="item"> <img class="smaller" src="misc_images/LMX_slide1_logo_1line_alpha.png"></div>
 
+ </div>
+
+<script src="lomaxshow.js"></script>
 </body>
 </html>
