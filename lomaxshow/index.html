@@ -3,6 +3,7 @@
 <html>
 	<head>
 		<title>Lomax Main</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
 <script src="https://code.jquery.com/jquery-1.12.1.js"></script>
 <script type="text/javascript" src="js/jfunc.js"></script>
@@ -25,6 +26,103 @@ body {
 	background-size: 1000px 1200px;
     background-repeat: no-repeat;*/
 }
+@-webkit-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@-moz-keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+@keyframes fadeIn { from { opacity:0; } to { opacity:1; } }
+ 
+.fade-in {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+ 
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+ 
+	-webkit-animation-duration:1s;
+	-moz-animation-duration:1s;
+	animation-duration:1s;
+}
+ 
+.fade-in.one {
+-webkit-animation-delay: 0.0s;
+-moz-animation-delay: 0.0s;
+animation-delay: 0.0s;
+}
+ 
+.fade-in.two {
+-webkit-animation-delay: 0.5s;
+-moz-animation-delay:0.5s;
+animation-delay: 0.5s;
+}
+ 
+.fade-in.three {
+-webkit-animation-delay: 2s;
+-moz-animation-delay: 2s;
+animation-delay: 2s;
+}
+.fade-in.four {
+-webkit-animation-delay: 3.2s;
+-moz-animation-delay: 3.2s;
+animation-delay: 3.2s;
+}
+.fade-in.five {
+-webkit-animation-delay: 4.2s;
+-moz-animation-delay: 4.2s;
+animation-delay: 4.2s;
+}
+.fade-in.six {
+-webkit-animation-delay: 5.2s;
+-moz-animation-delay: 5.2s;
+animation-delay: 5.2s;
+}
+.fade-in.seven {
+-webkit-animation-delay: 6s;
+-moz-animation-delay: 6s;
+animation-delay: 6s;
+}
+.fade-in.eight {
+-webkit-animation-delay: 7s;
+-moz-animation-delay: 7s;
+animation-delay: 7s;
+}
+.fade-in.nine {
+-webkit-animation-delay: 9s;
+-moz-animation-delay: 9s;
+animation-delay: 9s;
+}
+.fade-in.ten {
+-webkit-animation-delay: 10s;
+-moz-animation-delay: 10s;
+animation-delay: 10s;
+}
+.fade-in2 {
+	opacity:0;  /* make things invisible upon start */
+	-webkit-animation:fadeIn ease-in 1;  /* call our keyframe named fadeIn, use animattion ease-in and repeat it only 1 time */
+	-moz-animation:fadeIn ease-in 1;
+	animation:fadeIn ease-in 1;
+ 
+	-webkit-animation-fill-mode:forwards;  /* this makes sure that after animation is done we remain at the last keyframe value (opacity: 1)*/
+	-moz-animation-fill-mode:forwards;
+	animation-fill-mode:forwards;
+ 
+	-webkit-animation-duration:3s;
+	-moz-animation-duration:3s;
+	animation-duration:3s;
+}
+.fade-in2.a {
+-webkit-animation-delay: 11s;
+-moz-animation-delay: 11s;
+animation-delay: 11s;
+}
+
+.fade-in2.b {
+-webkit-animation-delay: 12.8s;
+-moz-animation-delay: 12.8s;
+animation-delay: 12.8s;
+}
+
 
 .item {
   height: 14px; 
@@ -36,8 +134,9 @@ body {
   color: white;
 }
 
+
 img {
-	width: 58%;
+	width: 80%;
 }
 .smaller {
 	width: 40%;
@@ -81,7 +180,7 @@ img {
 		<div class="item">and no Velvet Underground."</div>
 		<div class="item">- Brian Eno</div>
 		<div class="item"></div>
-		<div class="item"><a href="/lomaxshow"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
+		<div class="item"><a href="/lomaxabout"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
 		<div class="item"> <img class="smaller" src="misc_images/LMX_slide1_logo_1line_alpha.png"></div>
 
  </div>
