@@ -1,0 +1,55 @@
+<!doctype html>
+<html>
+	<head>
+		<title>Lomax Main</title>
+			<link rel="stylesheet" type="text/css" href="index.css">
+
+    		<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+			<script src="https://code.jquery.com/jquery-1.12.1.js"></script>
+			<script type="text/javascript" src="js/jfunc.js"></script>
+
+	</head>
+
+	<body>
+<!--     <audio autoplay>
+     <source src="audio/footsteps.mp3" type="audio/mpeg">
+    </audio> -->
+		<script>
+	jQuery('body').css('display','none');
+	jQuery(document).ready(function() {
+		jQuery('body').fadeIn(4000);
+		jQuery('a').on('click',function(event){
+			var thetarget = this.getAttribute('target')
+			if (thetarget != "_blank"){			
+				var thehref = this.getAttribute('href')
+				event.preventDefault();
+				jQuery('body').fadeOut(function(){
+					//alert(thehref)
+					window.location = thehref					
+				});
+			}
+		});
+	});
+	setTimeout(function(){
+		jQuery('body').fadeIn();
+	},2000)
+		</script>
+		<div class="wrapper1"></div>
+
+		<div class="wrapper2">
+			<div class="item fade-in one"></div>
+			<div class="item fade-in two"><h3>Without Lomax,</h3></div>
+			<div class="item fade-in three"><h3>it’s possible there would have been</h3></div>
+			<div class="item fade-in four"><h3>no blues explosion, </h3></div>
+			<div class="item fade-in five"><h3>no R&B movement, </h3></div>
+			<div class="item fade-in six"><h3>no Beatles </h3></div>
+			<div class="item fade-in seven"><h3>and no Stones </h3></div>
+			<div class="item fade-in eight"><h3>and no Velvet Underground."</h3></div>
+			<div class="item fade-in nine"><h3>- Brian Eno</h3></div>
+			<div class="item fade-in ten"></div>
+			<div class="item fade-in2 a eleven"><a href="/lomaxabout"> <img src="misc_images/LMX_slide1_logo_text_alpha.png"></a></div>
+			<div class="item fade-in2 b"> <img class="smaller" src="misc_images/LMX_slide1_logo_1line_alpha.png"></div>
+ 		</div>
+    <script src="lomaxshow.js"></script>
+	</body>
+</html>
